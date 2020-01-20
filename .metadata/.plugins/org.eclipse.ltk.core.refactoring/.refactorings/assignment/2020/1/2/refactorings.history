@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;assign.package-info.java&apos; to &apos;student.java&apos;&#x0D;&#x0A;- Original project: &apos;assignment&apos;&#x0D;&#x0A;- Original element: &apos;assign.package-info.java&apos;&#x0D;&#x0A;- Renamed element: &apos;assign.student.java&apos;" description="Rename compilation unit &apos;package-info.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;assign{package-info.java" name="student.java" references="false" stamp="1578485017683" version="1.0"/>
+</session>

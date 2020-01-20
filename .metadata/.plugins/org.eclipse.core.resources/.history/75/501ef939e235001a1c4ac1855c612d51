@@ -1,0 +1,14 @@
+import java.io.FileOutputStream;
+public class finout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {FileOutputStream f=new FileOutputStream("E:\\cognizant\\nandu.txt");
+			f.write(65);
+			f.close();
+			System.out.println("check for A in file");
+		}catch(Exception e) {System.out.println(e);}
+
+	}
+
+}

@@ -1,0 +1,20 @@
+package hpack;
+import java.util.*;
+public class stumain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ArrayList a=new ArrayList();
+a.add(new student(523,"nandu","cse"));
+a.add(new student(529,"appu","cse"));
+a.add(new student(540,"gaayi","ece"));
+System.out.println("sort by name");
+Collections.sort(a,new Namecomp());
+Iterator i=a.iterator();
+while(i.hasNext())
+{
+	student st=(student)i.next();
+	System.out.println(st.stu_id+" "+st.stu_name+" "+st.stu_branch);
+	}
+	}
+}

@@ -1,0 +1,60 @@
+package hpack;
+
+public class empmanager implements Comparable<empmanager> {
+	int emp_id,emp_sal;
+	String emp_name,emp_loc;
+    Adress a;
+    
+	@Override
+	public String toString() {
+		return "empmanager [emp_id=" + emp_id + ", emp_sal=" + emp_sal + ", emp_name=" + emp_name + ", emp_loc="
+				+ emp_loc + ", a=" + a + "]";
+	}
+
+	public Adress getA() {
+		return a;
+	}
+	public void setA(Adress a) {
+		this.a = a;
+	}
+	public int getEmp_id() {
+		return emp_id;
+	}
+	public void setEmp_id(int emp_id) {
+		this.emp_id = emp_id;
+	}
+	public int getEmp_sal() {
+		return emp_sal;
+	}
+	public void setEmp_sal(int emp_sal) {
+		this.emp_sal = emp_sal;
+	}
+	public String getEmp_name() {
+		return emp_name;
+	}
+	public void setEmp_name(String emp_name) {
+		this.emp_name = emp_name;
+	}
+	public String getEmp_loc() {
+		return emp_loc;
+	}
+	public void setEmp_loc(String emp_loc) {
+		this.emp_loc = emp_loc;
+	}
+	empmanager(int emp_id,String emp_name,int emp_sal,String emp_loc,Adress a)
+	{
+		this.emp_id=emp_id;
+		this.emp_name=emp_name;
+		this.emp_sal=emp_sal;
+		this.emp_loc=emp_loc;
+		this.a=a;
+	}
+
+	@Override
+	public int compareTo(empmanager e) {
+		// TODO Auto-generated method stub
+		/*return emp_name.compareTo(e.emp_name);*/
+		return this.emp_id-e.emp_id;
+		
+	}
+}

@@ -1,0 +1,11 @@
+package hpack;
+import java.util.*;
+public class Stu_fil {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<student> l=new ArrayList<student>();
+        l.add(new student(523,"nandu","cse",7.3));
+	}
+
+}

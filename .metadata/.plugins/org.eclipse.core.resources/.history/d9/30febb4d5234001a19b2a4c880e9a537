@@ -1,0 +1,5 @@
+package access;
+import java.util.*;
+public class Mapper {
+Mapper m=new HashMap();
+}

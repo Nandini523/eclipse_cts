@@ -1,0 +1,20 @@
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.util.*;
+public class fread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {FileInputStream f=new FileInputStream("E:\\cognizant\\nandu.txt");
+			/*System.out.println("enter text");
+		Scanner sc=new Scanner(System.in);
+		    String s=sc.nextLine();
+			byte b[]=s.getBytes();*/
+		    System.out.println(f.read());
+			f.close();
+			System.out.println("check for text in file");
+		}catch(Exception e) {System.out.println(e);}
+
+	}
+
+}

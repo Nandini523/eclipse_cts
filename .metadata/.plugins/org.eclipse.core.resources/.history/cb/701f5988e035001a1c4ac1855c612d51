@@ -1,0 +1,24 @@
+package hpack;
+import java.util.*;
+import java.util.stream.*;
+public class Stu_fil {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<student> l=new ArrayList<student>();
+        l.add(new student(523,"nandu","cse",7.3));
+        l.add(new student(524,"appu","cse",8.2));
+        l.add(new student(524,"gaayi","cse",6.2));
+        l.add(new student(554,"neeli","ece",6.0));
+        Iterator itr =l.iterator();
+        while(itr.hasNext())
+        {
+        	student st=(student)itr.next();
+        	System.out.println(st.stu_name+" "+st.cgpa);
+        }
+        System.out.println("After filtering based on cgpa");
+        Stream<student> fil_data=l.parallelStream().filter(s->s.cgpa>7.0);
+        fil_data.forEach(stu->System.out.println(stu.stu_name+" "+stu.cgpa));
+	}
+
+}

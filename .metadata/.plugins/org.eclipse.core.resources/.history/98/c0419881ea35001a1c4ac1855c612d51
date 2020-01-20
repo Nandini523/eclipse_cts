@@ -1,0 +1,18 @@
+import java.io.FileOutputStream;
+import java.util.*;
+public class finout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {FileOutputStream f=new FileOutputStream("E:\\cognizant\\nandu.txt");
+			Scanner sc=new Scanner(System.in);
+		    String s=sc.nextLine();
+			byte b[]=s.getBytes();
+		    f.write(b);
+			f.close();
+			System.out.println("check for Nandu in file");
+		}catch(Exception e) {System.out.println(e);}
+
+	}
+
+}

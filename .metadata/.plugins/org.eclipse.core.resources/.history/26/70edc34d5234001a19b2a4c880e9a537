@@ -1,0 +1,7 @@
+package access;
+import package hpack;
+import java.util.*;
+public class Mapper {
+Map m=new HashMap();
+student s1=new student(523,"nandu","cse");
+}
