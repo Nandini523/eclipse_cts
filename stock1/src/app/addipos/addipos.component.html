@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Bootstrap Simple Login Form</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+ .login-form {
+
+ width: 600px;
+
+   margin: 50px auto;
+   padding:10px;
+
+ }
+
+  .login-form form {
+
+   margin-bottom: 15px;
+
+    background: white;
+
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+    padding: 30px;
+
+  }
+
+  .login-form h2 {
+
+    margin: 0 0 15px;
+    padding: 15px;
+    padding-left: 20px;
+
+  }
+
+  .form-control, .btn {
+
+    min-height: 38px;
+
+    border-radius: 2px;
+
+  }
+
+  .btn {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+  }
+
+  .bg {
+
+ /* The image used */
+
+ background-image: url("https://g.foolcdn.com/editorial/images/531930/getty-stock-market-success.jpg");
+
+
+
+ /* Full height */
+
+ height: 100%;
+
+
+
+ /* Center and scale the image nicely */
+
+ background-position: center;
+
+ background-repeat: no-repeat;
+
+ background-size: cover;
+
+}
+h4{padding: 10px;
+background-color: white;
+}
+
+</style>
+
+</head>
+
+<body class=bg>
+
+<div class="login-form">
+
+  <!--<form role="form"   autocomplete="off">-->
+    <form [formGroup]="saveIpoform" #saveIpoDetails1 (ngSubmit)="saveIpoDetails(saveIpoDetails1)">
+    <h2 class="text-center">Add Ipos</h2>
+    <div class="form-group"><label>Id</label>
+      <input type="number" class="form-control"   formControlName="ipoid" placeholder="Id" required="required" name="ipoid">
+      <div class="alert alert-danger" *ngIf = "(ipoid.touched) && (ipoid.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="Ipoid.errors.required">Id is Required</span>
+      <span *ngIf = "Ipoid.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+    </div>
+    <div class="form-group"><label>Date</label>
+
+      <input type="date" class="form-control"  formControlName="date"placeholder="Date" required="required" name="date">
+      <div class="alert alert-danger" *ngIf = "(date.touched) && (date.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="date.errors.required">Date is Required</span>
+      <span *ngIf = "date.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+    </div>
+    <div class="form-group"><label>Time</label>
+
+      <input type="text" class="form-control"  formControlName="time"placeholder="Date" required="required" name="time">
+      <div class="alert alert-danger" *ngIf = "(time.touched) && (time.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="time.errors.required">Time is Required</span>
+      <span *ngIf = "time.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+    </div>
+    <div class="form-group"><label>CompanyName</label>
+      <input type="text" class="form-control" placeholder="CompanyName"  formControlName="companyName"required="required" name="companyName">
+            <div class="alert alert-danger" *ngIf = "(companyName.touched) && (companyName.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="companyName.errors.required">Company Name is Required</span>
+      <span *ngIf = "companyName.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+    </div>
+    <div class="form-group"><label>Price Per Share</label>
+
+      <input type="text" class="form-control" placeholder="Price per Share"  formControlName="priceperShare"required="required" name="priceperShare">
+      <div class="alert alert-danger" *ngIf = "(priceperShare.touched) && (priceperShare.invalid)"
+
+      style="margin-top: 5px;">
+    
+      <span *ngIf="priceperShare.errors.required">number is Required</span>
+      <span *ngIf = "priceperShare.errors.maxLength">Invalid Mobile no</span>
+       <span *ngIf = "priceperShare.errors.minLength">
+    
+       Invalid mobilenumber
+    
+       </span>
+    
+      </div>
+    </div>
+    <div class="form-group"><label>Stock Exchange</label>
+
+      <input type="text" class="form-control" placeholder="StockExchange"  formControlName="stockExchange" required="required" name="stockExchange">
+      <div class="alert alert-danger" *ngIf = "(stockExchange.touched) && (stockExchange.invalid)"
+
+      style="margin-top: 5px;">
+    
+       <span *ngIf="stockExchange.errors.required">Email is Required</span>
+    
+       <span *ngIf = "stockExchange.errors.email">
+    
+       Invalid Email Format
+    
+       </span>
+    
+      </div>
+    </div>
+    <div class="form-group"><label>Total No of Shares</label>
+
+        <input type="text" class="form-control" placeholder="Total No of Shares" formControlName="totalnoofShares"required="required" name="totalnoofShares">
+        <div class="alert alert-danger" *ngIf = "(totalnoofShares.touched) && (totalnoofShares.invalid)"
+
+        style="margin-top: 5px;">
+      
+        <span *ngIf="totalnoofShares.errors.required">password is Required</span>
+      
+         <span *ngIf = "totalnoofShares.errors.minlength">
+      
+         MinLength Error
+      
+         </span>
+      
+        </div>
+      </div>
+      
+    <div class="form-group">
+
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
+    </div>
+
+    <div class="clearfix">
+
+      <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+
+      <a href="#" class="pull-right">Forgot Password?</a>
+
+    </div>
+
+  </form>
+  <div [hidden]="!submitted">
+
+    <h4 style="color: lightskyblue;">User Added Successfully</h4>
+   
+    <button (click)="saveIpoform()"><a routerLink="/Submit"></a></button>
+   
+    </div>
+</div>
+
+</body>
+
+</html> 
+
+

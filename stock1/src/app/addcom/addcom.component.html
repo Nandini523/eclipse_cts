@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+ <meta charset="utf-8">
+
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+ <title>Bootstrap Sign up Form with Icons</title>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <style type="text/css">
+
+ body {
+
+  color: #fff;
+
+  background-image: url("https://cdn.dnaindia.com/sites/default/files/styles/full/public/2017/10/27/620013-stocks-market-thinkstock-102717.jpg");
+
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+ }
+
+
+
+ .form-control,
+
+ .form-control:focus,
+
+ .input-group-addon {
+
+  border-color: #e1e1e1;
+
+ }
+
+
+
+ .form-control,
+
+ .btn {
+
+  border-radius: 3px;
+
+ }
+
+
+
+ .login-form {
+
+  width: 900px;
+
+  margin: 0 auto;
+
+  padding: 40px 0;
+  padding-left: 150px;
+
+ }
+
+
+
+ .login-form form {
+
+  color: #999;
+
+  border-radius: 5px;
+
+  margin-bottom: 20px;
+
+  background: #fff;
+
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+  padding: 40px;
+  width: 600px; 
+
+ }
+
+
+
+ .login-form h2 {
+
+  color: #333;
+
+  font-weight: bold;
+
+  margin-top: 0;
+
+ }
+
+
+
+ .login-form hr {
+
+  margin: 0 -30px 20px;
+
+ }
+
+
+
+ .login-form .form-group {
+
+  margin-bottom: 20px;
+
+ }
+
+
+
+ .login-form label {
+
+  font-weight: normal;
+
+  font-size: 13px;
+
+ }
+
+
+
+ .login-form .form-control {
+
+  min-height: 38px;
+
+  box-shadow: none !important;
+
+ }
+
+
+
+ .login-form .input-group-addon {
+
+  max-width: 42px;
+
+  text-align: center;
+
+ }
+
+
+
+ .login-form .btn {
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  background: #19aa8d;
+
+  border: none;
+
+  min-width: 140px;
+
+ }
+
+
+
+ .login-form .btn:hover,
+
+ .login-form .btn:focus {
+
+  background: #179b81;
+
+  outline: none;
+
+ }
+
+
+
+ .login-form a {
+
+  color: #fff;
+
+  text-decoration: underline;
+
+ }
+
+
+
+ .login-form a:hover {
+
+  text-decoration: none;
+
+ }
+
+
+
+ .login-form form a {
+
+  color: #ecf1f0;
+
+  text-decoration: none;
+
+ }
+
+
+
+ .login-form form a:hover {
+
+  text-decoration: underline;
+
+ }
+
+
+
+ .login-form .fa {
+
+  font-size: 21px;
+
+ }
+
+
+
+ .login-form .fa-paper-plane {
+
+  font-size: 18px;
+
+ }
+
+
+
+ .login-form .fa-check {
+
+  color: #fff;
+
+  left: 17px;
+
+  top: 18px;
+
+  font-size: 7px;
+
+  position: absolute;
+
+ }
+
+ </style>
+
+</head>
+
+
+
+<body class=bg>
+  <div class="login-form">
+
+    <div [hidden]="submitted" style="width: 400px;">
+   
+   
+   
+     <form [formGroup]="saveCompanyform" #saveUser1 (ngSubmit)="saveCompany(saveCompany1)" class="form-container">
+   
+   
+   
+     <h2>Add Company</h2>
+   
+     <hr>
+   
+     <div class="form-group"><label>Company Name</label>
+   
+      <div class="input-group">
+   
+      <span class="input-group-addon"></span>
+   
+      <input type="text" class="form-control" formControlName="companyname" placeholder="Companyname" name="cname"
+   
+       required="required">
+   
+      <div class="alert alert-danger" *ngIf="cname.invalid && cname.touched"
+   
+       style="margin-top: 5px;">
+       <span *ngIf="cname.errors.required">Company mame is Required</span>
+       
+       <span *ngIf="cname.errors.minlength">
+       MinLength Error
+       </span>
+      </div>
+   
+      </div>
+   
+     </div>
+     <div class="form-group"><label>CEO</label>
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+      <input type="text" class="form-control"  formControlName="ceo"placeholder="CEO" required="required" name="Ceo">
+      <div class="alert alert-danger" *ngIf = "(Ceo.touched) && (Ceo.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="Ceo.errors.required">CEO is Required</span>
+      <span *ngIf = "Ceo.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+      </div>
+    </div>
+    <div class="form-group"><label>Board of Directors</label>
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+      <input type="text" class="form-control"  formControlName="boardofdirectors"placeholder="Board of Directors" required="required" name="bod">
+      <div class="alert alert-danger" *ngIf = "(bod.touched) && (bod.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="bod.errors.required">Board of directors is Required</span>
+      <span *ngIf = "bod.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+      </div>
+    </div>
+    <div class="form-group"><label>Sector</label>
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+      <input type="text" class="form-control"  formControlName="sector"placeholder="Sector" required="required" name="sector">
+      <div class="alert alert-danger" *ngIf = "(sector.touched) && (sector.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="sector.errors.required">Sector is Required</span>
+      <span *ngIf = "sector.errors.minlength">
+       Invalid sector
+      </span>
+      </div>
+      </div>
+    </div>
+    <div class="form-group"><label>Brief Write Up</label>
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+      <input type="text" class="form-control"  formControlName="briefwriteup"placeholder="Brief Write Up" required="required" name="bwp">
+      <div class="alert alert-danger" *ngIf = "(bwp.touched) && (bwp.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="bwp.errors.required">Brief is Required</span>
+      <span *ngIf = "bwp.errors.minlength">
+       Invalid Brief
+      </span>
+      </div>
+      </div>
+    </div>
+ 
+     <div class="form-group"><label>Turnover</label>
+   
+      <div class="input-group">
+   
+      <span class="input-group-addon"></span>
+   
+      <input type="text" class="form-control" formControlName="turnover" placeholder="Turnover" name="tover"
+   
+       required="required">
+   
+      <div class="alert alert-danger" *ngIf="(tover.touched) && (tover.invalid)"
+   
+       style="margin-top: 5px;">
+   
+   
+   
+       <span *ngIf="tover.errors.required">Turnover is Required</span>
+   
+   
+   
+       <span *ngIf="tover.errors.minlength">
+   
+   
+   
+       Turnover is required
+   
+   
+   
+       </span>
+   
+   
+   
+      </div>
+   
+      </div>
+   
+     </div>
+     <div class="form-group"><label>Listed in stock</label>
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+      <input type="text" class="form-control"  formControlName="listedinstock"placeholder="Listed in stock" required="required" name="lis">
+      <div class="alert alert-danger" *ngIf = "(lis.touched) && (lis.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="lis.errors.required">List is required</span>
+      <span *ngIf = "lis.errors.minlength">
+        Min length criteria
+      </span>
+      </div>
+      </div>
+    </div>
+    <div class="form-group"><label> Stock code</label>
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+      <input type="text" class="form-control"  formControlName="stockcode"placeholder="Stock Code" required="required" name="stockcode">
+      <div class="alert alert-danger" *ngIf = "(stockcode.touched) && (stockcode.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="stockcode.errors.required">Stock code is required</span>
+      <span *ngIf = "stockcode.errors.minlength">
+        Min length criteria
+      </span>
+      </div>
+      </div>
+    </div>
+   
+     <button type="submit" class="btn btn-primary btn-lg" >Submit</button>
+   
+     </form>
+   
+    </div>
+   
+    <div [hidden]="!submitted">
+
+      <h4>Company Added Successfully</h4>
+     
+      <button (click)="saveCompanyForm()"><a routerLink="/Login"></a></button>
+     
+      </div>
+   
+    
+   
+    </div>
+   
+   
+
+</body>
+
+</html> 

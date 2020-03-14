@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+ <meta charset="utf-8">
+
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+ <title>Bootstrap Sign up Form with Icons</title>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <style type="text/css">
+
+ body {
+
+  color: #fff;
+
+  background-image: url("https://optinmonster.com/wp-content/uploads/2016/01/High-Converting-Places-to-Add-Email-Signup-Forms.png");
+
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+ }
+
+
+
+ .form-control,
+
+ .form-control:focus,
+
+ .input-group-addon {
+
+  border-color: #e1e1e1;
+
+ }
+
+
+
+ .form-control,
+
+ .btn {
+
+  border-radius: 3px;
+
+ }
+
+
+
+ .login-form {
+
+  width: 900px;
+
+  margin: 0 auto;
+
+  padding: 40px 0;
+  padding-left: 150px;
+
+ }
+
+
+
+ .login-form form {
+
+  color: #999;
+
+  border-radius: 5px;
+
+  margin-bottom: 20px;
+
+  background: #fff;
+
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+  padding: 40px;
+  width: 600px; 
+
+ }
+
+
+
+ .login-form h2 {
+
+  color: #333;
+
+  font-weight: bold;
+
+  margin-top: 0;
+
+ }
+
+
+
+ .login-form hr {
+
+  margin: 0 -30px 20px;
+
+ }
+
+
+
+ .login-form .form-group {
+
+  margin-bottom: 20px;
+
+ }
+
+
+
+ .login-form label {
+
+  font-weight: normal;
+
+  font-size: 13px;
+
+ }
+
+
+
+ .login-form .form-control {
+
+  min-height: 38px;
+
+  box-shadow: none !important;
+
+ }
+
+
+
+ .login-form .input-group-addon {
+
+  max-width: 42px;
+
+  text-align: center;
+
+ }
+
+
+
+ .login-form .btn {
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  background: #19aa8d;
+
+  border: none;
+
+  min-width: 140px;
+
+ }
+
+
+
+ .login-form .btn:hover,
+
+ .login-form .btn:focus {
+
+  background: #179b81;
+
+  outline: none;
+
+ }
+
+
+
+ .login-form a {
+
+  color: #fff;
+
+  text-decoration: underline;
+
+ }
+
+
+
+ .login-form a:hover {
+
+  text-decoration: none;
+
+ }
+
+
+
+ .login-form form a {
+
+  color: #ecf1f0;
+
+  text-decoration: none;
+
+ }
+
+
+
+ .login-form form a:hover {
+
+  text-decoration: underline;
+
+ }
+
+
+
+ .login-form .fa {
+
+  font-size: 21px;
+
+ }
+
+
+
+ .login-form .fa-paper-plane {
+
+  font-size: 18px;
+
+ }
+
+
+
+ .login-form .fa-check {
+
+  color: #fff;
+
+  left: 17px;
+
+  top: 18px;
+
+  font-size: 7px;
+
+  position: absolute;
+
+ }
+
+ </style>
+
+</head>
+
+
+
+<body class=bg>
+  <div class="login-form">
+
+    <div [hidden]="submitted" style="width: 400px;">
+   
+   
+   
+     <form [formGroup]="saveUserform" #saveUser1 (ngSubmit)="saveUser(saveUser1)" class="form-container">
+   
+   
+   
+     <h2>Sign-up</h2>
+   
+     <hr>
+   
+     <div class="form-group"><label>Username</label>
+   
+      <div class="input-group">
+   
+      <span class="input-group-addon"><i class="fa fa-user" style="color:rgb(14, 130, 247)"></i></span>
+   
+      <input type="text" class="form-control" formControlName="username" placeholder="Username"
+   
+       required="required">
+   
+      <div class="alert alert-danger" *ngIf="saveUserform.get('username').invalid && saveUserform.get('username').touched"
+   
+       style="margin-top: 5px;">
+       <span *ngIf="saveUserform.get('username').errors.required">UserName is Required</span>
+       <span *ngIf="saveUserform.get('username').errors.minlength">
+       MinLength Error
+       </span>
+      </div>
+   
+      </div>
+   
+     </div>
+     <div class="form-group"><label>Id</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-id-card" style="color:rgb(14, 130, 247)"></i></span>
+      <input type="text" class="form-control"  formControlName="id"placeholder="id" required="required" name="uid">
+      <div class="alert alert-danger" *ngIf = "(uid.touched) && (uid.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="uid.errors.required">id is Required</span>
+      <span *ngIf = "uid.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+      </div>
+    </div>
+    
+    <div class="form-group"><label>Mobile</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-phone" style="color:rgb(14, 130, 247)"></i></span>
+      <input type="text" class="form-control"  formControlName="mobileno"placeholder="mobileno" required="required" name="umobile">
+      <div class="alert alert-danger" *ngIf = "(umobile.touched) && (umobile.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="umobile.errors.required">Number is Required</span>
+      <span *ngIf = "umobile.errors.minlength">
+       Invalid mobile number
+      </span>
+      </div>
+      </div>
+    </div>
+    <div class="form-group"><label>Email</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope" style="color:rgb(14, 130, 247)"></i></span>
+      <input type="text" class="form-control"  formControlName="email"placeholder="Email-id" required="required" name="uemail">
+      <div class="alert alert-danger" *ngIf = "(uemail.touched) && (uemail.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="uemail.errors.required">Email is Required</span>
+      <span *ngIf = "uemail.errors.email">
+       Invalid Email Id
+      </span>
+      </div>
+      </div>
+    </div>
+ 
+     <div class="form-group"><label>Password</label>
+   
+      <div class="input-group">
+   
+      <span class="input-group-addon"><i class="fa fa-lock" style="color:rgb(14, 130, 247)"></i></span>
+   
+      <input type="password" class="form-control" formControlName="password" placeholder="Password"
+   
+       required="required">
+   
+      <div class="alert alert-danger" *ngIf="(saveUserform.get('password').touched) && (saveUserform.get('password').invalid)"
+   
+       style="margin-top: 5px;">
+   
+   
+   
+       <span *ngIf="saveUserform.get('password').errors.required">Password is Required</span>
+   
+   
+   
+       <span *ngIf="saveUserform.get('password').errors.minlength">
+   
+   
+   
+       Password should be atleast 6 charecters
+   
+   
+   
+       </span>
+   
+   
+   
+      </div>
+   
+      </div>
+   
+     </div>
+     
+    <div class="form-group">  
+      <div class="col-md-offset-1 col-md-4">  
+            
+        <label for="profileImage">Upload Image</label>  
+          <input formControlName="profileImage" class="form-control" type="file" (change)="selectFile($event)">   
+      </div>  
+    </div>  
+     <button type="submit" class="btn btn-primary btn-lg" [disabled]=!saveUserform.valid>Sign-up</button>
+   
+     </form>
+   
+    </div>
+   
+    <div [hidden]="!submitted">
+
+      <h4>User Added Successfully</h4>
+     
+      <button (click)="saveUserForm()"><a routerLink="/Login"></a></button>
+     
+      </div>
+   
+    
+   
+    </div>
+   
+   
+
+</body>
+
+</html> 

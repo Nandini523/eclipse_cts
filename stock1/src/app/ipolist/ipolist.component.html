@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Bootstrap Simple Login Form</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+ .login-form {
+
+ width: 600px;
+
+   margin: 50px auto;
+   padding:10px;
+
+ }
+
+  .login-form form {
+
+   margin-bottom: 15px;
+
+    background: #f7f7f7;
+
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+    padding: 30px;
+
+  }
+
+  .login-form h2 {
+
+    margin: 0 0 15px;
+    padding: 15px;
+    padding-left: 20px;
+
+  }
+
+  .form-control, .btn {
+
+    min-height: 38px;
+
+    border-radius: 2px;
+
+  }
+
+  .btn {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+  }
+
+  .bg {
+
+ /* The image used */
+
+ background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/15/94/285823f61c7ed73.jpg");
+
+
+
+ /* Full height */
+
+ height: 100%;
+
+
+
+ /* Center and scale the image nicely */
+
+ background-position: center;
+
+ background-repeat: no-repeat;
+
+ background-size: cover;
+
+}
+td:hover {
+    background-color:
+rgb(202, 120, 120)} 
+</style>
+
+</head>
+
+<body class=bg>
+<div >
+
+    <div >
+    
+        <table class="table table-hover table-sm">
+    
+       
+    
+         <thead class="thead-light">
+    
+          <tr>
+    
+          <th>Id</th>
+    
+           <th>Date</th>
+           <th>Time</th>
+           <th>CompanyName</th>
+    
+           <th>PricePerShare</th>
+    
+           <th>StockExchange</th>
+           
+           <th>Total No Of Shares</th>
+           <th></th><th></th>
+          </tr>
+    
+         </thead>
+    
+         <tbody>
+    
+          <tr *ngFor="let ipo of ipoList ">
+    
+           <td style="color: aliceblue;">{{ipo.ipoid}}</td>
+           <td style="color: aliceblue;">{{ipo.date}}</td>
+           <td style="color: aliceblue;">{{ipo.time}}</td>
+           <td style="color: aliceblue;">{{ipo.companyName}}</td>
+           <td style="color: aliceblue;">{{ipo.priceperShare}}</td>
+           <td style="color: aliceblue;">{{ipo.stockExchange}}</td>
+           <td style="color: aliceblue;"> {{ipo.totalnoofShares}}</td>
+           <td><button (click)="deleteIpos(ipo)" class="btn btn-danger">Delete</button> </td>
+           <td><button (click)="updateIpoDetails(ipo)" class="btn btn-danger">update</button> </td>
+           </tr>
+    
+            </tbody><br>
+    
+        </table>
+    
+      </div>
+    
+      </div>
+      <div class="container">
+        
+      
+        <ul class="nav nav-pills ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/addipos">Add</a>
+          </li>&nbsp;
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="mc">Edit</a>
+          </li>&nbsp;
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="Mex" >Remove</a>
+          </li>&nbsp;
+          
+        </ul>
+      </div>
+      
+</body>
+</html> 
+    
+    
+

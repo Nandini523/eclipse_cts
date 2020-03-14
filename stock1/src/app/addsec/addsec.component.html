@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Bootstrap Simple Login Form</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+ .login-form {
+
+ width: 600px;
+
+   margin: 50px auto;
+   padding:10px;
+
+ }
+
+  .login-form form {
+
+   margin-bottom: 15px;
+
+    background: white;
+
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+    padding: 30px;
+
+  }
+
+  .login-form h2 {
+
+    margin: 0 0 15px;
+    padding: 15px;
+    padding-left: 20px;
+
+  }
+
+  .form-control, .btn {
+
+    min-height: 38px;
+
+    border-radius: 2px;
+
+  }
+
+  .btn {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+  }
+
+  .bg {
+
+ /* The image used */
+
+ background-image: url("https://www.kaszek.com/wp-content/uploads/2017/06/fintech1.jpg");
+
+
+
+ /* Full height */
+
+ height: 100%;
+
+
+
+ /* Center and scale the image nicely */
+
+ background-position: center;
+
+ background-repeat: no-repeat;
+
+ background-size: cover;
+
+}
+h4{padding: 10px;
+background-color: white;
+}
+</style>
+
+</head>
+
+<body class=bg>
+
+<div class="login-form">
+
+  <!--<form role="form"   autocomplete="off">-->
+    <form [formGroup]="saveSecform" #saveSectors1 (ngSubmit)="saveSectors(saveSectors1)">
+    <h2 class="text-center">Add Sectors</h2>
+    <div class="form-group"><label>Sector Id</label>
+      <input type="number" class="form-control"   formControlName="sid" placeholder="Id" required="required" name="sid">
+      <div class="alert alert-danger" *ngIf = "(sid.touched) && (sid.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="sid.errors.required">Id is Required</span>
+      <span *ngIf = "sid.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+    </div>
+    
+    <div class="form-group"><label>Sector Name</label>
+      <input type="text" class="form-control" placeholder="Sector Name"  formControlName="sectorname"required="required" name="sectorname">
+            <div class="alert alert-danger" *ngIf = "(sectorname.touched) && (sectorname.invalid)"
+      style="margin-top: 5px;">
+      <span *ngIf="sectorname.errors.required">Sector Name is Required</span>
+      <span *ngIf = "sectorname.errors.minlength">
+       MinLength Error
+      </span>
+      </div>
+    </div>
+    
+    
+    <div class="form-group"><label>Brief</label>
+
+        <input type="text" class="form-control" placeholder="Give a Brief" formControlName="brief"required="required" name="brief">
+        <div class="alert alert-danger" *ngIf = "(brief.touched) && (brief.invalid)"
+
+        style="margin-top: 5px;">
+      
+        <span *ngIf="brief.errors.required">Say something in brief</span>
+      
+         <span *ngIf = "brief.errors.minlength">
+      
+         MinLength Error
+      
+         </span>
+      
+        </div>
+      </div>
+      
+    <div class="form-group">
+
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
+    </div>
+
+    <div class="clearfix">
+
+      <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+
+      <a href="#" class="pull-right">Forgot Password?</a>
+
+    </div>
+
+  </form>
+  <div [hidden]="!submitted">
+
+    <h4 style="color: rgb(10, 60, 92);">User Added Successfully</h4>
+   
+    <button (click)="saveSecForm()"><a routerLink="/Submit"></a></button>
+   
+    </div>
+</div>
+
+</body>
+
+</html> 
+
+
+
